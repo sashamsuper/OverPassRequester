@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latestMajor</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <PropertyGroup>
+    <UseMauiEssentials>false</UseMauiEssentials>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Copyright>©sashamsuper, 2023</Copyright>
+    <PackageProjectUrl>https://github.com/sashamsuper/OverPassRequester</PackageProjectUrl>
+    <PackageTags>overpass;turbo;c sharp</PackageTags>
+
+    <Version>0.1.1-alpha</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="TestProject1\**" />
+    <EmbeddedResource Remove="TestProject1\**" />
+    <None Remove="TestProject1\**" />
+  </ItemGroup>
+</Project>
