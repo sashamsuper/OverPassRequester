@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build ./OpRequester/OpRequester.csproj --no-restore
     - name: Test
-      run: dotnet test ./TestProject1/Tests.csproj --no-build --verbosity normal
+      run: dotnet test ./OpRequester/OpRequester.csproj --no-build --verbosity normal
