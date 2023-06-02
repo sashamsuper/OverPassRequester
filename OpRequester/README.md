@@ -1,4 +1,4 @@
-©sashamsuper, 2023
+Â©sashamsuper, 2023
 
 OverPassRequester
 
@@ -15,5 +15,3 @@ string responseTxt = $"way['name:en'~'{river}',i]['waterway'='river'](48.5366276
 var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
 Debug.WriteLine(value);
 var name = value.Elements.Select(x => x.Tags).Select(y => y.Name);
-
-
