@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpRequester", "OpRequester.csproj", "{3BB41EFF-B82D-41BD-BACA-3DADBF555153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPassRequester", "OverPassRequester.csproj", "{3BB41EFF-B82D-41BD-BACA-3DADBF555153}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "..\TestProject1\Tests.csproj", "{91B6086A-F567-4ABC-A165-FECECB512DF2}"
 EndProject

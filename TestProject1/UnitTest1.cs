@@ -5,33 +5,29 @@ using System.Text.Json.Serialization;
 
 namespace TestProject1
 {
-    public class NWR: RootObject<Element<TagsGe>>
-    { 
-
+    public class NWR : RootObject<Element<TagsGe>>
+    {
     }
 
     public class TagsGe
     {
-            [JsonPropertyName("place")]
-            public string? Place { get; set; }
+        [JsonPropertyName("place")]
+        public string? Place { get; set; }
 
-            [JsonExtensionData]
-            public IDictionary<string, object>? ExtensionTags { set; get; }
+        [JsonExtensionData]
+        public IDictionary<string, object>? ExtensionTags { set; get; }
     }
-
-
 
     [TestClass]
     public class UnitTest1
     {
-        
         [TestMethod]
         public void TestOneName()
         {
             OverPassClient over = new(new Uri("https://maps.mail.ru/osm/tools/overpass/api/interpreter"));
             var river = "Сена";
             var city = "Париж";
-            string responseTxt = $"way['name:ru'~'Сена',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'Париж',i]['place'~'(city|village|town|hamlet)'];);";
+            string responseTxt = $"way['name:ru'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
             Debug.WriteLine(value);
             var name = value.Elements.Select(x => x.Tags).Select(y => y.Name);
@@ -57,7 +53,7 @@ namespace TestProject1
             OverPassClient over = new(new Uri("https://maps.mail.ru/osm/tools/overpass/api/interpreter"));
             var river = "Сена";
             var city = "Париж";
-            string responseTxt = $"way['name:ru'~'Сена',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'Париж',i]['place'~'(city|village|town|hamlet)'];);";
+            string responseTxt = $"way['name:ru'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonDocumentAsync(responseTxt).Result;
             JsonElement root = value.RootElement;
             JsonElement elements = root.GetProperty("elements");
@@ -78,9 +74,7 @@ namespace TestProject1
             Debug.WriteLine(value);
             var name = value.Elements.Select(x => x.Tags).Select(y => y.Place).First();
             Assert.AreEqual(name.ToString(), "city");
-
         }
-
 
         [TestMethod]
         public void TestMethodExtension()
@@ -93,7 +87,6 @@ namespace TestProject1
             Debug.WriteLine(value);
             var name = value.Elements.Select(x => x.Tags).Select(y => y.ExtensionTags).First()["place"];
             Assert.AreEqual(name.ToString(), "city");
-
         }
     }
 }

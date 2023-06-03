@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==========================================================================*/
 
-
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
@@ -23,7 +22,6 @@ namespace OverPassRequester
 {
     public class Element<TTags>
     {
-
         [JsonPropertyName("type")]
         public string? Type { get; set; }
 
@@ -83,11 +81,8 @@ namespace OverPassRequester
     {
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-        
+
         [JsonExtensionData]
-				public IDictionary<string,object>? ExtensionTags {set;get;}
+        public IDictionary<string, object>? ExtensionTags { set; get; }
     }
-
-
-
 }

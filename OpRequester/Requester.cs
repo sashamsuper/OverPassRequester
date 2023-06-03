@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 namespace OverPassRequester
 {
 
-    public class Programm
+    public class Program
     {
         public void Main()
         {

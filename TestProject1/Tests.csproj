@@ -18,7 +18,7 @@
     <PackageReference Include="System.Text.Json" Version="7.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OpRequester\OpRequester.csproj" />
+    <ProjectReference Include="..\OpRequester\OverPassRequester.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
