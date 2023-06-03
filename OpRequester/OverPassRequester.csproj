@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Platforms>AnyCPU;x64</Platforms>
+    <Platforms>AnyCPU</Platforms>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <PropertyGroup>
     <LangVersion>latestMajor</LangVersion>
@@ -15,17 +16,16 @@
   <PropertyGroup>
     <UseMauiEssentials>false</UseMauiEssentials>
   </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json"
+      Version="7.0.*">
+    </PackageReference>
+  </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Copyright>©sashamsuper, 2023</Copyright>
     <PackageProjectUrl>https://github.com/sashamsuper/OverPassRequester</PackageProjectUrl>
     <PackageTags>overpass;turbo;c sharp</PackageTags>
-
-    <Version>0.1.1-alpha</Version>
+    <Version>0.1.2-alpha</Version>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="TestProject1\**" />
-    <EmbeddedResource Remove="TestProject1\**" />
-    <None Remove="TestProject1\**" />
-  </ItemGroup>
 </Project>

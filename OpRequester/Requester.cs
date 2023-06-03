@@ -77,11 +77,13 @@ namespace OverPassRequester
             return repsonse;
         }
 
-        private async Task<Stream> GetResponseAsync(XmlWriterTraceListener request)
+        
+        /*private async Task<Stream> GetResponseAsync(XmlWriterTraceListener request)
         {
             throw new NotImplementedException("Not working");
             return default;
         }
+        */
 
         private string ReturnRequestToClient(string request)
         {
