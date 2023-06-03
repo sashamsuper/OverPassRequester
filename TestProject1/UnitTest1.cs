@@ -79,7 +79,7 @@ namespace TestProject1
         [TestMethod]
         public void TestMethodExtension()
         {
-            OverPassClient over = new(new Uri("https://overpass-api.de/api/interpreter"));
+            OverPassClient over = new(new Uri("https://overpass.kumi.systems/api/interpreter"));
             var river = "Сена";
             var city = "Париж";
             string responseTxt = $"way['name:ru'~'Сена',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'Париж',i]['place'~'(city|village|town|hamlet)'];);";
