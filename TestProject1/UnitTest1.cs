@@ -30,21 +30,21 @@ namespace TestProject1
             string responseTxt = $"way['name:ru'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
             Debug.WriteLine(value);
-            var name = value.Elements.Select(x => x.Tags).Select(y => y.Name);
-            Assert.AreEqual("Paris", "Paris");
+            var name = value?.Elements.FirstOrDefault()?.Tags?.Name;
+            Assert.AreEqual(name, "Paris");
         }
 
         [TestMethod]
         public void TestOneNameEn()
         {
             OverPassClient over = new(new Uri("https://maps.mail.ru/osm/tools/overpass/api/interpreter"));
-            var river = "Sena";
+            var river = "La Seine";
             var city = "Paris";
-            string responseTxt = $"way['name:en'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:en'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
+            string responseTxt = $"way['name:fr'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:fr'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
             Debug.WriteLine(value);
-            var name = value.Elements.Select(x => x.Tags).Select(y => y.Name);
-            Assert.AreEqual("Paris", "Paris");
+            var name = value?.Elements.FirstOrDefault()?.Tags?.Name;
+            Assert.AreEqual(name, "Paris");
         }
 
         [TestMethod]
@@ -69,10 +69,10 @@ namespace TestProject1
             OverPassClient over = new(new Uri("https://maps.mail.ru/osm/tools/overpass/api/interpreter"));
             var river = "Сена";
             var city = "Париж";
-            string responseTxt = $"way['name:ru'~'Сена',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'Париж',i]['place'~'(city|village|town|hamlet)'];);";
+            string responseTxt = $"way['name:ru'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonAsync<NWR>(responseTxt).Result;
             Debug.WriteLine(value);
-            var name = value.Elements.Select(x => x.Tags).Select(y => y.Place).First();
+            var name = value?.Elements.FirstOrDefault()?.Tags?.Place;
             Assert.AreEqual(name.ToString(), "city");
         }
 
@@ -82,10 +82,10 @@ namespace TestProject1
             OverPassClient over = new(new Uri("https://overpass.kumi.systems/api/interpreter"));
             var river = "Сена";
             var city = "Париж";
-            string responseTxt = $"way['name:ru'~'Сена',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'Париж',i]['place'~'(city|village|town|hamlet)'];);";
+            string responseTxt = $"way['name:ru'~'{river}',i]['waterway'='river'](48.5366276064,1.89894557,49.0954664277,3.0497634411)->.river;(node(around.river:9150)['name:ru'~'{city}',i]['place'~'(city|village|town|hamlet)'];);";
             var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
             Debug.WriteLine(value);
-            var name = value.Elements.Select(x => x.Tags).Select(y => y.ExtensionTags).First()["place"];
+            var name = value?.Elements?.FirstOrDefault()?.Tags?.ExtensionTags["place"];
             Assert.AreEqual(name.ToString(), "city");
         }
     }
