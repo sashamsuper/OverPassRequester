@@ -17,4 +17,4 @@ Example.
             var value = over.GetJsonAsync<RootObject<Element<Tags>>>(responseTxt).Result;
             var name = value?.Elements.FirstOrDefault()?.Tags?.Name;
             Assert.AreEqual(name, "Paris");
-            Console.WriteLine(value);
+            Console.WriteLine(name);
