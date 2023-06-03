@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build ./OpRequester/OverPassRequester.csproj --no-restore
     - name: Test
-      run: dotnet test ./TestProject1/Tests.csproj --verbosity diagnostic
+      run: dotnet test ./TestProject1/Tests.csproj --verbosity detailed
