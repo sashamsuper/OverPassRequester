@@ -26,3 +26,8 @@ jobs:
       run: dotnet build ./OpRequester/OverPassRequester.csproj --no-restore
     - name: Test
       run: dotnet test ./TestProject1/Tests.csproj --verbosity detailed
+    - name: Publish  
+      uses: brandedoutcast/publish-nuget@v2.5.4 
+      with:
+        PROJECT_FILE_PATH: ./OpRequester/OverPassRequester.csproj
+        NUGET_KEY: ${{secrets.NUGET_KEY_REPR}} 
