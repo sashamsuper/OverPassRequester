@@ -4,7 +4,7 @@ OverPassRequester
 
 Library for suggestions for the overpass turbo.
 
-Now work only with overpass QL.
+Now work only with overpass Ql.
 
 Example.
 
