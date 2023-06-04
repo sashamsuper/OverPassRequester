@@ -14,12 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==========================================================================*/
 
-//using Newtonsoft.Json;
 using System;
-using System.Diagnostics;
 using System.IO;
-
-//using Android.Net.Uri;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;

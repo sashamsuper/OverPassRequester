@@ -2,7 +2,7 @@
 
 OverPassRequester
 
-Library for suggestions for the overpass turbo.
+Library requests to overpass turbo on c sharp.
 
 Now work only with overpass Ql.
 

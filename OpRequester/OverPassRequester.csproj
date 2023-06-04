@@ -30,7 +30,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <Copyright>©sashamsuper, 2023</Copyright>
     <PackageProjectUrl>https://github.com/sashamsuper/OverPassRequester</PackageProjectUrl>
-    <PackageTags>overpass;turbo;c sharp</PackageTags>
+    <PackageTags>overpass;turbo;json</PackageTags>
     <Version>0.1.2-alpha</Version>
   </PropertyGroup>
 </Project>
