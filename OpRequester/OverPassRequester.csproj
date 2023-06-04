@@ -17,9 +17,14 @@
     <UseMauiEssentials>false</UseMauiEssentials>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="System.Text.Json"
-      Version="7.0.*">
+    <PackageReference Include="System.Text.Json" Version="7.0.*">
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
